@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom neutral theme overrides */
+@layer components {
+  /* Main background colors using neutral palette */
+
+
+
+
+  .bg-gray-700 {
+    @apply bg-neutral-800;
+  }
+
+  .bg-gray-600 {
+    @apply bg-neutral-700;
+  }
+
+  /* Text colors using neutral palette */
+  .text-gray-400 {
+    @apply text-neutral-400;
+  }
+
+  .text-gray-300 {
+    @apply text-neutral-300;
+  }
+
+  .text-gray-500 {
+    @apply text-neutral-500;
+  }
+
+  /* Border colors using neutral palette */
+  .border-gray-700 {
+    @apply border-neutral-700;
+  }
+
+  .border-gray-600 {
+    @apply border-neutral-600;
+  }
+
+  /* Keep interactive elements with proper contrast */
+  .btn-primary {
+    @apply bg-teal-600 hover:bg-teal-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-700 hover:bg-neutral-600 text-white border border-neutral-600;
+  }
+
+  /* Link colors - keep accent colors for visibility */
+  .link-primary {
+    @apply text-teal-400 hover:text-teal-300;
+  }
+
+  /* Status colors - keep for semantic meaning */
+  .text-success {
+    @apply text-green-400;
+  }
+
+  .text-error {
+    @apply text-red-400;
+  }
+
+  .text-warning {
+    @apply text-orange-400;
+  }
+
+  /* Hover states for cards and interactive elements */
+  .card-hover {
+    @apply hover:bg-neutral-850 transition-colors;
+  }
+
+  /* Custom scrollbar for neutral theme */
+  .scrollbar-neutral {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.neutral.600") theme("colors.neutral.800");
+  }
+
+  .scrollbar-neutral::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-neutral::-webkit-scrollbar-track {
+    @apply bg-neutral-800;
+  }
+
+  .scrollbar-neutral::-webkit-scrollbar-thumb {
+    @apply bg-neutral-600 rounded-full;
+  }
+
+  .scrollbar-neutral::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
+  }
+}
+
+/* Ensure proper contrast for form elements */
+@layer components {
+  .form-input {
+    @apply bg-neutral-800 border-neutral-700 text-white placeholder-neutral-400;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+
+  .form-textarea {
+    @apply bg-neutral-800 border-neutral-700 text-white placeholder-neutral-400;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+
+  .form-select {
+    @apply bg-neutral-800 border-neutral-700 text-white;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+}
+
+/* Badge variants with proper contrast */
+@layer components {
+  .badge-neutral {
+    @apply bg-neutral-700 text-neutral-300 border-neutral-600;
+  }
+
+  .badge-primary {
+    @apply bg-teal-600 text-white;
+  }
+
+  .badge-secondary {
+    @apply bg-neutral-600 text-neutral-200;
+  }
+}
+
+/* Navigation active states */
+@layer components {
+  .nav-active {
+    @apply bg-neutral-800 text-white;
+  }
+
+  .nav-inactive {
+    @apply text-neutral-300 hover:bg-neutral-800 hover:text-white;
+  }
+}

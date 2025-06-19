@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+/* Button fixes for better contrast */
+@layer components {
+  .btn-primary {
+    @apply bg-teal-600 hover:bg-teal-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-white border border-gray-600;
+  }
+
+  /* Fix for follow button visibility */
+  .btn-follow {
+    @apply bg-teal-600 hover:bg-teal-700 text-white border-0;
+  }
+
+  /* Link colors */
+  .link-primary {
+    @apply text-teal-400 hover:text-teal-300;
+  }
+
+  /* Status colors */
+  .text-success {
+    @apply text-green-400;
+  }
+
+  .text-error {
+    @apply text-red-400;
+  }
+
+  .text-warning {
+    @apply text-orange-400;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply hover:bg-gray-800 transition-colors;
+  }
+}
+
+/* Form elements with better styling */
+@layer components {
+  .form-input {
+    @apply bg-gray-800 border-gray-600 text-white placeholder-gray-400;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+
+  .form-textarea {
+    @apply bg-gray-800 border-gray-600 text-white placeholder-gray-400;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+
+  .form-select {
+    @apply bg-gray-800 border-gray-600 text-white;
+    @apply focus:border-teal-500 focus:ring-teal-500;
+  }
+}
+
+/* Badge variants with proper contrast */
+@layer components {
+  .badge-neutral {
+    @apply bg-gray-700 text-gray-300 border-gray-600;
+  }
+
+  .badge-primary {
+    @apply bg-teal-600 text-white;
+  }
+
+  .badge-secondary {
+    @apply bg-gray-600 text-gray-200;
+  }
+}
+
+/* Navigation states */
+@layer components {
+  .nav-active {
+    @apply bg-gray-800 text-white;
+  }
+
+  .nav-inactive {
+    @apply text-gray-300 hover:bg-gray-800 hover:text-white;
+  }
+}
+
+/* Smooth transitions */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
