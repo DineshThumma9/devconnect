@@ -12,7 +12,9 @@ interface ActivityTimelineProps {
   compact?: boolean
 }
 
-export function ActivityTimeline({ activities, compact = false }: ActivityTimelineProps) {
+
+
+    export function ActivityTimeline({ activities, compact = false }: ActivityTimelineProps) {
   const getIcon = (type: string) => {
     switch (type) {
       case "launch":

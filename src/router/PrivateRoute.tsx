@@ -1,9 +1,8 @@
 // src/routes/PrivateRoute.tsx
-import {Navigate} from "react-router-dom";
-import useAuthStore from "../store/authStore";
+import {Navigate, Outlet} from "react-router-dom";
+import useAuthStore from "@/store/authStore.ts";
 
-export default function PrivateRoute({children}: { children: React.ReactElement }) {
+export default function PrivateRoute() {
     const token = useAuthStore.getState().accessToken
-
-    return token ? children : <Navigate to="/login"/>;
+    return token ? <Outlet/> : <Navigate to="/login"/>;
 }

@@ -13,7 +13,7 @@ interface ProjectCardProps {
   onClick?: () => void
 }
 
-export function ProjectCard({ title, description, image, tags, featured, onClick }: ProjectCardProps) {
+export  default function ProjectCard({ title, description, image, tags, featured, onClick }: ProjectCardProps) {
   return (
     <Card
       className="bg-gray-900 border-gray-700 hover:bg-gray-800 transition-colors cursor-pointer group"

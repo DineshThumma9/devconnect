@@ -28,7 +28,7 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
   const navigationItems = [
     { name: "Home", icon: Home, path: "/" },
     { name: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
-    { name: "Projects", icon: ListChecks, path: "/projects" },
+    { name: "Projects", icon: ListChecks, path: "/projects/1" },
     { name: "Community", icon: Users, path: "/community" },
     { name: "Explore", icon: Compass, path: "/explore" },
     { name: "Notifications", icon: Bell, path: "/notifications" },
